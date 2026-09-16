@@ -9,6 +9,8 @@ In this repo I document the projects that I have done during my journey of learn
 The projects and documentations can serve as learning references, and I hope they are useful for you. 
 <br>
 
+This repo hosts my projects which are (i think) more complex than (my) another repo [Mini-Projects-Frontend_VLSI](https://github.com/Chinnam-Tejesh/Mini-Projects-Frontend_VLSI) 
+
 ## repo Structure
 - the repo is Structured as:
   - LICENSE    - licensing of the repo

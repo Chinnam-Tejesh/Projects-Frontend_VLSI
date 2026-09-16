@@ -14,14 +14,13 @@ list of my projects
 
 | **Name of the Project** | **Project tags** |
 | --- | --- |
-| 2) De-Multiplexer| - combi, <br> - param |
-| 1) Multiplexer | - combi, <br> - param |
+| 1) STP | - seq <br>  |
 
 ## tags and their abbreviations
 - Project tags
     - param - parameterised design. (note these design may not be "optimised" for your use case)
-    - combi - combinational.
-    - sequ - sequential.
+    - combi - combinational. (opne loop elements)
+    - sequ - sequential. (clock and memories)
     - sync - synchronous.
     - async - asynchronous.
     - pipe - pipelined. (designed to be used in pipelined system)
