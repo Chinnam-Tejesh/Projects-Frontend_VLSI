@@ -18,6 +18,11 @@ The projects and documentations can serve as learning references, and I hope the
 
 Each project folder has it's own README file, refer it to know about the project.
 
+## navigation links
+Links for quick navigation in this repo:
+- README of projects: [click](Projects/README.md)
+
+
 ## repo Licensing
 This repository is under the **Apache-2.0 license**.
 
