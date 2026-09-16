@@ -19,9 +19,9 @@ The projects and documentations can serve as learning references, and I hope the
 Each project folder has it's own README file, refer it to know about the project.
 
 ## repo Licensing
-This repository is under the **MIT License**. You are free to use, modify, and distribute the code with proper credit to me (appropriate attribution is required).
+This repository is under the **Apache-2.0 license**. You are free to use, modify, and distribute the code with proper credit to me (appropriate attribution is required), check `NOTICE.md` for more details.
 <br>
-See `LICENSE` for more details.
+See `LICENSE.md` for more details.
 
 ## Contacts
 - LinkdIn (preferred): [linkdin.com/in/tejesh-sri-abhay-chinnam](https://www.linkedin.com/in/tejesh-sri-abhay-chinnam)
