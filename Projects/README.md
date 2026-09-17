@@ -14,7 +14,7 @@ list of my projects
 
 | **Name of the Project** | **Project tags** |
 | --- | --- |
-| 1) STP | - seq <br>  |
+| 1) Async FIFO (2 phase handshaking)| - seq <br> - async |
 
 ## tags and their abbreviations
 - Project tags
