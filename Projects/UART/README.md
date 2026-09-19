@@ -6,9 +6,15 @@ An instance of UART have an Transmitter TX and Reciver RX, which are connected u
 
 
 ## Steps
--[ ] Counter 
--[ ] Binary to grey encoder 
--[ ] Baud rate generator 
--[ ] FIFO 
--[ ] Parallel to serial & Serial to parallel registers 
--[ ] 
+- Baud rate generator 
+    - [ ] Counter 
+    - [ ] Binary to grey encoder 
+    - [ ] Finishing baud rate generator 
+- [ ] Tx System 
+    - [ ] Parallel to serial registers 
+    - [ ] Core logic 
+    - [ ] Finishing Tx system 
+- [ ] Rx System 
+    - [ ] Serial to Parallel registers 
+    - [ ] Core logic 
+    - [ ] Finishing Rx system 
