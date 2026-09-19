@@ -6,7 +6,7 @@ An instance of UART have an Transmitter TX and Reciver RX, which are connected u
 
 
 ## Steps
-- Baud rate generator 
+- [ ] Baud rate generator 
     - [ ] Counter 
     - [ ] Binary to grey encoder 
     - [ ] Finishing baud rate generator 
