@@ -1,0 +1,90 @@
+#-> My goto .gitignore <-#
+
+##############################################
+# Repo specific
+##############################################
+/My_Playground/
+
+##############################################
+# macOS
+##############################################
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+.TemporaryItems
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+##############################################
+# Editor / IDE
+##############################################
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+##############################################
+# Verilator
+##############################################
+obj_dir/
+*.vcd
+*.vcd.gz
+*.fst
+*.fst.hier
+*.tree.json
+*.xml
+.verilator_history
+logs/
+
+##############################################
+# GCC / C / C++ build artifacts
+##############################################
+*.o
+*.obj
+*.a
+*.so
+*.so.*
+*.dylib
+*.out
+*.exe
+*.d
+a.out
+build/
+bin/
+core.*
+*.dSYM/
+
+##############################################
+# Python
+##############################################
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+*.egg-info/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+dist/
+*.egg
+
+##############################################
+# Waveform / debug output
+##############################################
+*.wlf
+
+##############################################
+# Misc temp/lock files
+##############################################
+*.bak
+*.lock
+*.orig
+
