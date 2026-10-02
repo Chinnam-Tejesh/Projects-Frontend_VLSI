@@ -2,7 +2,7 @@
 ################################################################################
 # -PARENT NAME: UART_Tx.sv
 # -MODULE NAME: BRG_Tx.sv
-# -REVISION [DATE]:
+# -REVISION [DATE]: 2023-10-01
 # -DESCRIPTION: Baud Rate Generator for UART Transmitter
 #
 ################################################################################
@@ -20,8 +20,8 @@
 `timescale 1ns / 1ps
 
 module BRG_Tx #(
-    SYS_CLK_FREQ = 50_000_000,  // System Clock Frequency in Hz
-    BAUD_RATE = 9600  // Agreed Baud Rate
+    parameter integer SYS_CLK_FREQ = 50_000_000,  // System Clock Frequency in Hz
+    parameter integer BAUD_RATE = 9600  // Agreed Baud Rate
 ) (
     input Sys_Clk_In,  // System Clock
     input Rst_In,  // Reset - Synchronous & Active High 
@@ -43,7 +43,9 @@ module BRG_Tx #(
     end
   end
 
-  assign counter_ns = counter_ps + 1;  // Next state of counter
+  always_comb begin
+    counter_ns = counter_ps + 1;  // Next state of counter
+  end
 
   assign Tick_Out = (counter_ps == TICKS_PER_BAUD_COUNT - 1) ? 1'b1 : 1'b0;  // Generate tick when counter reaches max
 
