@@ -26,7 +26,11 @@ module BRG_Tx #(
     output Tick_Out  // Tick signal to FSM
 );
   localparam int TICKS_PER_BAUD_COUNT = SYS_CLK_FREQ / BAUD_RATE;  // Calculate ticks per baud (result in integer, floor rounding)
-  logic [$clog2(TICKS_PER_BAUD_COUNT)-1:0] counter_ps;  // Counter to track ticks
+  logic [($clog2(
+TICKS_PER_BAUD_COUNT
+) == 1) ? 1 : $clog2(
+TICKS_PER_BAUD_COUNT
+)-1 : 0] counter_ps;  // Counter to track ticks
 
   generate
     if (BAUD_RATE > SYS_CLK_FREQ || SYS_CLK_FREQ <= 0 || BAUD_RATE <= 0) begin : check_constraints
