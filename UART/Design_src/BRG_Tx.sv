@@ -30,7 +30,8 @@ module BRG_Tx #(
 TICKS_PER_BAUD_COUNT
 ) == 1) ? 1 : $clog2(
 TICKS_PER_BAUD_COUNT
-)-1 : 0] counter_ps;  // Counter to track ticks
+)-1 : 0]
+      counter_ps, counter_ns;  // Counter to track ticks
 
   generate
     if (BAUD_RATE > SYS_CLK_FREQ || SYS_CLK_FREQ <= 0 || BAUD_RATE <= 0) begin : check_constraints
@@ -44,12 +45,10 @@ TICKS_PER_BAUD_COUNT
     if (Rst_In || !BRG_En_In) begin
       counter_ps <= 0;
     end else begin
-      counter_ps <= counter_ps + 1;
-      if (counter_ps == TICKS_PER_BAUD_COUNT) begin
-        counter_ps <= 0;
-      end
+      counter_ps <= counter_ns;
     end
   end
+  assign counter_ns=(counter_ps == TICKS_PER_BAUD_COUNT - 1) ? 0 : counter_ps + 1;  // Next state logic for counter
 
   assign Tick_Out = (counter_ps == TICKS_PER_BAUD_COUNT - 1) ? 1'b1 : 1'b0;  // Generate tick when counter reaches max
 
