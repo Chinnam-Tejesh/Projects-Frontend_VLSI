@@ -10,20 +10,29 @@ The projects and documentations can serve as learning references, and I hope the
 <br>
 
 This repo hosts my projects which are (i think) more complex than (my) another repo [Mini-Projects-Frontend_VLSI](https://github.com/Chinnam-Tejesh/Mini-Projects-Frontend_VLSI) 
-
-## repo Structure
-- the repo is Structured as:
-  - LICENSE    - licensing of the repo
-  - README.md  - you are here
-  - Projects   - All the designs and testbenches are here (open you will find respective README.md)
 <br>
 
-Each project folder has it's own README file, refer it to know about the project.
+## Projects list 
+list of my projects 
+<br>
 
-## navigation links
-Links for quick navigation in this repo:
-- README of projects: [click](Projects/README.md)
+(Each project folder has it's own README file, refer it to know about the mico details of the project.)
+<br>
 
+| **Name of the Project** | **Project tags** | **Link** |
+| --- | --- | --- |
+| 1) UART | - seq <br> - async | [UART Project](UART/README.md) |
+
+## tags and their abbreviations
+- Project tags
+    - param - parameterised design. (note these design may not be "optimised" for your use case)
+    - combi - combinational. (opne loop elements)
+    - sequ - sequential. (clock and memories)
+    - sync - synchronous.
+    - async - asynchronous.
+    - pipe - pipelined. (designed to be used in pipelined system)
+
+<br>
 
 ## repo Licensing
 This repository is under the **Apache-2.0 license**.
