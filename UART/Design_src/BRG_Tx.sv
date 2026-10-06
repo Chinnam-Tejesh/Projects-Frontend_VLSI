@@ -4,12 +4,16 @@
 # -MODULE NAME: BRG_Tx.sv
 # -FILE CREATED: 1-Oct-2026
 # -FILE REVISED [DATE]: see commit history
-# -DESCRIPTION: Baud Rate Generator for UART Transmitter
+# -DESCRIPTION: Baud Rate Generator for UART Transmitter (floor rounding)
 #
 ################################################################################
-# Pre-Notes
-#
 # Notes
+#
+# -This BRG floor rounds the (Sys_clk / agreed_baud) result.
+# -Less logic compared to phase accumulator BRG.
+# -Use with caution, as this might cause frame error when
+#   working with other than standard packet size.
+# -Use PABRG_Tx when you are working with coustome packet size.
 #
 ################################################################################
 */
@@ -25,14 +29,13 @@ module BRG_Tx #(
     input BRG_En_In,  // Enable signal from FSM
     output Tick_Out  // Tick signal to FSM
 );
-  localparam int TICKS_PER_BAUD_COUNT = SYS_CLK_FREQ / BAUD_RATE;  // Calculate ticks per baud (result in integer, floor rounding)
-  logic [($clog2(
-TICKS_PER_BAUD_COUNT
-) == 1) ? 1 : $clog2(
-TICKS_PER_BAUD_COUNT
-)-1 : 0]
-      counter_ps, counter_ns;  // Counter to track ticks
+  // Calculate ticks per baud (result in integer, floor rounding)
+  localparam int TICKS_PER_BAUD_COUNT = SYS_CLK_FREQ / BAUD_RATE;
+  // Counter to track ticks
+  logic [($clog2( TICKS_PER_BAUD_COUNT) == 1) ? 1 : $clog2( TICKS_PER_BAUD_COUNT )-1 : 0]
+      counter_ps, counter_ns;
 
+  //Parameter constraints enforcement
   generate
     if (BAUD_RATE > SYS_CLK_FREQ || SYS_CLK_FREQ <= 0 || BAUD_RATE <= 0) begin : check_constraints
       $fatal(
