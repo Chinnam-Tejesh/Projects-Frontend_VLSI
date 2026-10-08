@@ -21,13 +21,16 @@ list of my projects
 
 | **Name of the Project** | **Project tags** | **Link** |
 | --- | --- | --- |
-| 1) UART | - seq <br> - async | [UART Project](UART/README.md) |
+| 2) SRAM | - seq <br> -sync <br> - param | [SRAM Project](SRAM/README.md) |
+| 1) UART | - seq <br> - async <br> - param | [UART Project](UART/README.md) |
 
 ## tags and their abbreviations
 - Project tags
     - param - parameterised design. (note these design may not be "optimised" for your use case)
+    - 
     - combi - combinational. (opne loop elements)
     - sequ - sequential. (clock and memories)
+    - 
     - sync - synchronous.
     - async - asynchronous.
     - pipe - pipelined. (designed to be used in pipelined system)
