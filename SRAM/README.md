@@ -6,13 +6,13 @@ SRAM is used in almost all applications in the modren world. And is core compone
 SRAM is choosed over DRAM (its counterpart, Dynamic RAM) where performance is critical (compramising on power and area) than area and cost.
 
 # Milestones
-- [x] Parallel Interface SRAM (PISRAM)[SRAM/Design_src/PISRAM.sv]
-- [ ] Minimal Interface SRAM (MISRAM)[SRAM/Design_src/MISRAM.sv]
+- [x] Parallel Interface SRAM [PISRAM](SRAM/Design_src/PISRAM.sv)
+- [ ] Minimal Interface SRAM [MISRAM](SRAM/Design_src/MISRAM.sv)
 
 # Docs
 
 ## Parallel Interface SRAM
 Rough block diagram of PISRAM interface.
-<img src="SRAM/docs/PISRAM_Diagram.png" width="600" alt="Module visual of PISRAM" loading="lazy">
+![PISRAM Diagram](SRAM/docs/PISRAM_interface.jpg)
 
 ## Minimal Interface SRAM
