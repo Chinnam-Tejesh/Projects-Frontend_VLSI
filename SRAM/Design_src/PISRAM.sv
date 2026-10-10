@@ -10,6 +10,7 @@
 # Notes
 # -Op stands for Operation (used in port identifiers)
 # -invalidOp_o covers address invalid OR (input) invalid case of en ports 
+# -The TBC_x stands for Test Block Code X (for block coverage verification)
 #
 ################################################################################
 */
@@ -45,7 +46,7 @@ module PISRAM #(
   logic [BIT_WIDTH - 1 : 0] storage[0 : RAM_SIZE - 1];  // the storage
 
   always_ff @(posedge clk_i or negedge arst_i) begin
-    if (!arst_i) begin
+    if (!arst_i) begin : reset_TBC1
       data_readOp_o <= 0;
       invalidOp_o   <= 1'b0;
     end else begin
@@ -54,21 +55,29 @@ module PISRAM #(
       case ({
         data_out_en_i, data_in_en_i
       })
-        2'b10: begin : Read_Operation
-          if (address_readOp_i < RAM_SIZE)  // Not really needed to check if address is between zero
+        2'b10: begin : read_Operation_TBC2
+          if (address_readOp_i < RAM_SIZE) begin : valid_read_TBC21
+            // Not really needed to check if address is between zero
             data_readOp_o <= storage[address_readOp_i];
-          else invalidOp_o <= 1'b1;
+          end else begin : invalid_read_TBC22
+            invalidOp_o <= 1'b1;
+          end
         end
 
-        2'b01: begin : Write_Operation
-          if (address_writeOp_i < RAM_SIZE)  // Not really needed to check if address is between zero
+        2'b01: begin : write_Operation_TBC3
+          if (address_writeOp_i < RAM_SIZE) begin : valid_write_TBC31
+            // Not really needed to check if address is between zero
             storage[address_writeOp_i] <= data_writeOp_i;
-          else invalidOp_o <= 1'b1;
+          end else begin : invalid_write_TBC32
+            invalidOp_o <= 1'b1;
+          end
         end
 
-        default: begin : Invalid_Case  // Covers 00 (design choice) and 11 case
+        default: begin : invalid_Case_TBC4
+          // Covers 00 (design choice) and 11 case
           invalidOp_o <= 1'b1;
         end
+
       endcase
     end
   end

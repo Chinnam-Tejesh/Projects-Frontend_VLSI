@@ -12,7 +12,7 @@ SRAM is choosed over DRAM (its counterpart, Dynamic RAM) where performance is cr
 # Docs
 
 ## Parallel Interface SRAM
-Rough block diagram of PISRAM interface.
+Block diagram of PISRAM interface.
 ![PISRAM Diagram](docs/PISRAM_interface.jpg)
 
 ## Minimal Interface SRAM
